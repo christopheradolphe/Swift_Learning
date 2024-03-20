@@ -10,6 +10,7 @@ print(employee["Location"])
 //For all these optional results with warning as Swift is saying there may not be a value
 
 //***Providing default when Accessing Dictionary (This will always produce a string back)
+//Don't always need this
 print(employee["Name", default: "Unknown"])
 
 //Combining different key and value types
