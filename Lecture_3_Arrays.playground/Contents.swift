@@ -2,8 +2,7 @@ import Cocoa
 
 //Arrays
 //All values in array must be of same type
-var beatles = ["John", "Paul", "George",]
-print(beatles[0])
+var beatles = ["John", "Paul", "George"]
 
 //Appending
 beatles.append("Ringo")
@@ -14,6 +13,8 @@ var scores = Array<Int>()
 //Second Way
 var albums = [String]()
 
+//Creating Non-Empty Array (Pretty)
+var records: [Int] = [10, 13, 25, 45]
 
 scores.append(100)
 scores.append(10)
