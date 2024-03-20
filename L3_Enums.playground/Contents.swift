@@ -22,6 +22,9 @@ enum Months{
 var day = Weekday.Monday
 print(day)
 
+//**Rassigning a variable that is an Enum
+day = .Wednesday
+
 var currentBill = Months.April
 print(currentBill)
 

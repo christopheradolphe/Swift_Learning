@@ -1,6 +1,7 @@
 import Cocoa
 
 //Creating a Dictionary
+//Must be one specific type for all keys and one specific type for all values
 var employee = ["Name": "Taylor Swift", "Job": "Singer", "Location": "Toronto"]
 
 //Accessing Values in Dictionary
