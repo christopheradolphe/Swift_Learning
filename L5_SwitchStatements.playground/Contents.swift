@@ -62,3 +62,6 @@ case 1:
 default:
     print("Nothing")
 }
+
+//Certain Situations you want Fall through
+//Unlike other languages have to assert follow through rather than it being default
