@@ -23,6 +23,7 @@ var day = Weekday.Monday
 print(day)
 
 //**Rassigning a variable that is an Enum
+//Type is already an enum so we do not need to respecify enum
 day = .Wednesday
 
 var currentBill = Months.April
