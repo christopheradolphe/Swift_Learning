@@ -1,5 +1,7 @@
 import Cocoa
 
+//Overall you can only have one return variable but it can hold multiple items
+
 //Could return string and dictionary return as one value but messy
 //Overall use one of Sets, Arrays, Dictionaries or Tuples to return
 //Tuples are cleanest
