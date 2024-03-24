@@ -1,5 +1,8 @@
 import Cocoa
 
+//When to use for loops
+// Repeating for a finite sequence of times
+
 let platforms = ["iOS", "macOS", "tvOS"]
 
 //Looping over a dataset
