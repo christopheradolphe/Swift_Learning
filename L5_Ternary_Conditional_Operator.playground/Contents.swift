@@ -18,3 +18,5 @@ enum Theme{
 theme = Theme.dark
 
 let background = theme == .dark ? "black" : "white"
+
+//Check
