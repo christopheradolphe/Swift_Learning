@@ -15,8 +15,6 @@ enum Theme{
     case light, dark
 }
 
-theme = Theme.dark
+let theme = Theme.dark
 
 let background = theme == .dark ? "black" : "white"
-
-//Check
