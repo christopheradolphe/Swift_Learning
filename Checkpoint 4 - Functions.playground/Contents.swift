@@ -18,7 +18,7 @@ func sqrtFinder(_ value: Int) throws -> Int {
     var middle: Int
     var squared: Int
     //Binary Search
-    while (left + 1) != right {
+    while (left + 1) != right || left != right {
         middle = (left+right) / 2
         squared = middle*middle
         if squared == value {
