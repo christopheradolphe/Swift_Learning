@@ -4,6 +4,8 @@ import Cocoa
 //Functions we can assign to variables and pass in as arguements to a function
 //One of tougher topics in swift
 
+//Closures are similar to function pointers in their role in swift in that they can be used as inputs and outputs of functions
+
 
 //Assigning a function to a value to assign a closure
 func greetUser() {
