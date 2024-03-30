@@ -29,7 +29,7 @@ let sortedTrailing = team.sorted { a, b in
 }
 
 
-//Shortened syntax
+//Shorthand syntax
 //Use when few variables and not many lines of code
 //Use $0, $1, $2, etc to specify variables and do not need variables or in to specify
 let sortedShortened = team.sorted {
