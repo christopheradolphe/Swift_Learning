@@ -46,6 +46,8 @@ struct EmployeeFail {
 //Any functions that don't change data can be let with regular func as defined usually
 
 //Creating a function in a struct that changes data has to be marked with: mutating
+//Mutating used as flag so as not to be used by structs instatiated with let
+//Method not marked as mutating can not call a mutating function
 struct Employee {
     let name: String
     var vacationRemaining: Int
