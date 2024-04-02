@@ -51,6 +51,7 @@ struct EmployeeFail {
 struct Employee {
     let name: String
     var vacationRemaining: Int
+    var defaultVal = 5           //HOW TO SET DEFAULT VALUE
     
     //*****mutating placed before func
     mutating func takeVacation(days: Int) {
