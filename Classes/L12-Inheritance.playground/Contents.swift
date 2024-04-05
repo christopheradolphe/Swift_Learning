@@ -37,3 +37,29 @@ Chris.work()
 James.work()
 Chris.printSummary()
 James.printSummary()
+
+//Modifying Inherited function
+//Rule: ***If child wants to change method from parent class, must use override keyword
+//If signatures are different (parameters are different type or different number) do not need
+
+class HR: Employee {
+    override func printSummary() {
+        print("I am HR who will work \(hours) a day")
+    }
+}
+
+var Jason = HR(hours: 5)
+Jason.printSummary()
+
+//Disable inheritance
+//Can use final keyword to disable a class from being inherited
+final class Janitor: Employee {
+    override func printSummary() {
+        print("I love cleaning")
+    }
+}
+
+//This will generate an error
+class Cleaner: Janitor {
+    
+}
