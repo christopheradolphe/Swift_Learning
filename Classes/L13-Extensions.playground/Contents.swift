@@ -44,3 +44,14 @@ extension String {
 }
 
 //Extensions very useful for creating our own initializers while retaining the memberwise struct initializer provided by Swift
+
+
+//Extensions for organization of code purpose:
+
+//1. Conformance Grouping
+//Adding a protocol conformance to a type as an extension (ie. adding all the required methods inside that extension)
+//ie. house all methods to make type abide to protocol inside one extension to make easier to read
+
+//2. Purpose Grouping
+// Extension to do specific tasks to make it clearer for large types
+// eg have one extension specifically handle loading and saving of that type
