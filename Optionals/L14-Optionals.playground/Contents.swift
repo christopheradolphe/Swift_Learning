@@ -23,7 +23,7 @@ let peachOpposite = opposites["Peach"]
 //1. Reads the optional value from the dictionary
 //2. If the optional has a string inside it gets unwrapped -> String gets placed in variable
 //3. Condition has succeeded so conditions body is run
-//How to do this: combine if and let/var together
+//How to do this: combine if let
         //Could also have else block
 if let marioOpposite = opposites["Mario"] {
     print("Mario's opposite is \(marioOpposite)")
@@ -46,3 +46,5 @@ square(number: number)
 if let number = number {
     square(number: number)
 }
+
+//***Can not compare optional to non-optional ever
