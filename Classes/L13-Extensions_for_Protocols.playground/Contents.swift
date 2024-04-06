@@ -11,7 +11,7 @@ extension Array {
         isEmpty == false
     }
 }
-
+let guests = ["Chris", "Lauren"]
 if guests.isNotEmpty {
     print("There are some guests")
 }
