@@ -4,7 +4,7 @@ import Cocoa
 //Can extend protocols to include method implmentations
 
 //Usefulness of Protocol Extensions
-//When we want to copy functionality to structs/classes that conform to particular protocol
+//Let us add functionality (methods or computed property) to all types agreeing to certain protocl
 
 extension Array {
     var isNotEmpty: Bool {
