@@ -6,3 +6,11 @@ import Cocoa
 
 
 func numberReturn(arr: [Int]?) -> Int { arr?.randomElement() ?? Int.random(in: 1...100) }
+
+
+var arr: [Int]? = [1, 4, 5, 6, 8, 3, 2]
+print(numberReturn(arr: arr))
+arr?.removeAll()
+print(numberReturn(arr: arr))
+arr = nil
+print(numberReturn(arr: arr))
