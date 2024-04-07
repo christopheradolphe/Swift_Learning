@@ -29,6 +29,7 @@ struct ContentView: View {
                 Section {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
                     Picker("Number of People", selection: $numberOfPeople) {
                         ForEach(1..<20) {
                             Text("\($0) People")
@@ -51,6 +52,13 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("WeSplit")
+            .toolbar {
+                if amountIsFocused {
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
     }
 }
