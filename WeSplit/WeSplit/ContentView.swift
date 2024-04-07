@@ -8,14 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    let students = ["Harry", "Hermoine", "Ron"]
+    @State private var selectedStudent = "Harry"
+    
+    @State private var name = ""
+    //With @State, Apple recommends using private for variables
+    @State private var tapCount = 0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("Name", text:$name) //$ to bind value as User types in
+                    Text("Your name is \(name)")
+                }
+                Section {
+                    Text("Hello world!")
+                    Text("Hello world!")
+                    Text("Hello world!")
+                }
+                
+            }
+            .navigationTitle("SwiftUI")
+            .navigationBarTitleDisplayMode(.large)
+            
+            Form {
+                ForEach(0..<100) {
+                    Text("Row \($0)")
+                }
+            }
         }
-        .padding()
+        Button("Tap Count: \(tapCount)") {
+            tapCount += 1
+        }
     }
 }
 
