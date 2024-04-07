@@ -29,7 +29,7 @@ struct ContentView: View {
                 Section {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .keyboardType(.decimalPad)
-                        .focused($amountIsFocused)
+                        .focused($amountIsFocused) //sets amount is focused to true
                     Picker("Number of People", selection: $numberOfPeople) {
                         ForEach(1..<20) {
                             Text("\($0) People")
@@ -55,7 +55,7 @@ struct ContentView: View {
             .toolbar {
                 if amountIsFocused {
                     Button("Done") {
-                        amountIsFocused = false
+                        amountIsFocused = false //will get rid of decimal pad
                     }
                 }
             }
