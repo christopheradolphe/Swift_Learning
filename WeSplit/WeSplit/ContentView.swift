@@ -24,19 +24,16 @@ struct ContentView: View {
                 }
                 Section {
                     Text("Hello world!")
-                    Text("Hello world!")
-                    Text("Hello world!")
                 }
-                
             }
-            .navigationTitle("SwiftUI")
-            .navigationBarTitleDisplayMode(.large)
             
             Form {
                 ForEach(0..<100) {
                     Text("Row \($0)")
                 }
             }
+            .navigationTitle("Select a Student")
+            .navigationBarTitleDisplayMode(.large)
         }
         Button("Tap Count: \(tapCount)") {
             tapCount += 1
