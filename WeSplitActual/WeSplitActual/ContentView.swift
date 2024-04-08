@@ -40,7 +40,7 @@ struct ContentView: View {
                 
                 Section("Tip Percentage"){
                     Picker("Tip Percentage", selection: $tipPercentage) {
-                        ForEach(tipPercentages, id: \.self) {
+                        ForEach(tipPercentages, id: \.self) { //Creating views in loop
                             Text($0, format: .percent)
                         }
                     }
