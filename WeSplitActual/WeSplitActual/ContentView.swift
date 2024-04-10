@@ -32,7 +32,7 @@ struct ContentView: View {
                         .focused($amountIsFocused) //sets amount is focused to true
                     Picker("Number of People", selection: $numberOfPeople) {
                         ForEach(1..<20) {
-                            Text("\($0) People")
+                            Text("\($0) People") //Shorthand syntax
                         }
                     }
                     .pickerStyle(.navigationLink)
