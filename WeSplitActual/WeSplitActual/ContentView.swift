@@ -31,7 +31,7 @@ struct ContentView: View {
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocused) //sets amount is focused to true
                     Picker("Number of People", selection: $numberOfPeople) {
-                        ForEach(1..<20) {
+                        ForEach(1..<20) { //For each range
                             Text("\($0) People") //Shorthand syntax
                         }
                     }
