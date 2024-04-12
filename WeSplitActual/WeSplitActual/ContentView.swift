@@ -44,11 +44,11 @@ struct ContentView: View {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.segmented) //How to choose picker style
                 }
                 
                 Section ("Total per Person") {
-                    Text(totalPerPerson, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format:.currency(code: Locale.current.currency?.identifier ?? "USD")) //Locale is for current user data
                 }
             }
             .navigationTitle("WeSplit")
