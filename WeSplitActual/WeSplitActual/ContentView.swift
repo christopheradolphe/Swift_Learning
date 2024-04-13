@@ -52,10 +52,10 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("WeSplit")
-            .toolbar {
+            .toolbar { //toolbar
                 if amountIsFocused {
                     Button("Done") {
-                        amountIsFocused = false //will get rid of decimal pad
+                        amountIsFocused = false //Section of code run when button pressed
                     }
                 }
             }
