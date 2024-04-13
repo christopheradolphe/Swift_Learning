@@ -14,12 +14,20 @@ struct ContentView: View {
     @FocusState private var amountIsFocused: Bool
     
     var totalPerPerson: Double {
-        let peopleCount = Double(numberOfPeople + 2)
+        let peopleCount = Double(numberOfPeople + 1)
         let tipSelection = Double(tipPercentage)
         let TipValue = checkAmount / 100 * tipSelection
         let grandTotal = checkAmount + TipValue
         let perPerson = grandTotal / peopleCount
         return perPerson
+    }
+    
+    var totalGroup: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection = Double(tipPercentage)
+        let TipValue = checkAmount / 100 * tipSelection
+        let grandTotal = checkAmount + TipValue
+        return grandTotal
     }
     
     let tipPercentages = [10, 15, 20, 25, 0]
@@ -45,6 +53,16 @@ struct ContentView: View {
                         }
                     }
                     .pickerStyle(.segmented) //How to choose picker style
+                    Picker("Other Tip Options", selection: $tipPercentage) {
+                        ForEach(0..<101) {
+                            Text("\($0)%")
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
+                }
+                
+                Section ("Total for the Group") {
+                    Text(totalGroup, format:.currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
                 
                 Section ("Total per Person") {
