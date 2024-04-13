@@ -23,9 +23,9 @@ struct ContentView: View {
             }
         } else if inputType == "Farhenheit" {
             if outputType == "Celsius" {
-                return (inputValue - Double(32)) * Double(5/9)
+                return (inputValue - Double(32)) * 5/9
             } else { //Kelvin
-                return ((inputValue - Double(32)) * Double(5/9)) + Double(273)
+                return ((inputValue - Double(32)) * 5/9) + Double(273)
             }
         } else { //Kelvin
             if outputType == "Celsius" {
