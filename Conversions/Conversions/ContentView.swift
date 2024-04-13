@@ -36,12 +36,17 @@ struct ContentView: View {
         }
     }
     
-    let temperatures = ["Celsius", "Farhenheit", "Kelvin"]
+    let temperatureTypes = ["Celsius", "Farhenheit", "Kelvin"]
     var body: some View {
         NavigationStack {
             Form {
                 Section ("Input Value") {
-                    
+                    Picker("Input Value", selection: $inputType) {
+                        ForEach(temperatureTypes, id: \.self) {
+                            Text($0, format: .number)
+                        }
+                    }
+                    .pickerStyle(.segmented)
                 }
             }
             .navigationTitle("Temperature Conversion")
