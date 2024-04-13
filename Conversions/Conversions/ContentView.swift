@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var inputType: String = "Celsius"
-    @State private var outputType: String = "Farhenheit"
+    @State private var outputType: String = "Celsius"
     @State private var inputValue: Double = 0.0
     
     var outputTempValue: Double {
@@ -17,21 +17,21 @@ struct ContentView: View {
             return inputValue
         } else if inputType == "Celsius" {
             if outputType == "Farhenheit" {
-                return inputValue
+                return (inputValue * 1.8) + Double(32)
             } else { //Kelvin
                 return inputValue + Double(273)
             }
         } else if inputType == "Farhenheit" {
             if outputType == "Celsius" {
-                return inputValue
+                return (inputValue - Double(32)) * Double(5/9)
             } else { //Kelvin
-                return inputValue
+                return ((inputValue - Double(32)) * Double(5/9)) + Double(273)
             }
         } else { //Kelvin
             if outputType == "Celsius" {
-                return inputValue
+                return inputValue - Double(273)
             } else { //Farhenheit
-                return inputValue
+                return ((inputValue - Double(273)) * 1.8) + Double(32)
             }
         }
     }
@@ -40,15 +40,27 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section ("Input Value") {
+                Section("Input Value") {
                     Picker("Input Value", selection: $inputType) {
                         ForEach(temperatureTypes, id: \.self) {
-                            Text($0, format: .number)
+                            Text("\($0)")
                         }
                     }
                     .pickerStyle(.segmented)
+                    
+                    TextField("\(inputType) temperature", value: $inputValue, format: .number)
                 }
-            }
+                
+                Section("Output Value") {
+                    Picker("Output Value", selection: $outputType) {
+                        ForEach(temperatureTypes, id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    
+                    Text("\(outputTempValue, format: .number)")
+                }            }
             .navigationTitle("Temperature Conversion")
             .navigationBarTitleDisplayMode(.inline)
         }
