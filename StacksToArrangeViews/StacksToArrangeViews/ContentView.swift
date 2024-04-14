@@ -26,7 +26,7 @@ struct ContentView: View {
 //            Text("Hello1")
 //            Text("Hello2")
 //        }
-//        ZStack { //Stacked on top of each other
+//        ZStack(alignment: .top) { //Stacked on top of each other
 //            Text("Hello 1")
 //            Text("Hello2")
 //        }
