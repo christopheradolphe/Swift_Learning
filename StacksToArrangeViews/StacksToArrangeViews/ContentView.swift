@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  GuessTheFlag
+//  StacksToArrangeViews
 //
 //  Created by Christopher Adolphe on 2024-04-14.
 //
