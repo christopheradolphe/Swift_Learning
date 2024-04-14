@@ -59,7 +59,7 @@ struct ContentView: View {
                     }
                     .pickerStyle(.segmented)
                     
-                    Text("\(outputTempValue, format: .number)")
+                    Text("\(outputTempValue, format: .number)") //Format number helps with showing number without tonnes of decimals
                 }            }
             .navigationTitle("Temperature Conversion")
             .navigationBarTitleDisplayMode(.inline)
