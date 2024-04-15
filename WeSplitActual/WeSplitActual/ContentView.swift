@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct TitleFont: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+    }
+}
+
+extension View {
+    func titledFormat() -> some View {
+        modifier(TitleFont())
+    }
+}
+
 struct ContentView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
@@ -33,6 +47,8 @@ struct ContentView: View {
     let tipPercentages = [10, 15, 20, 25, 0]
     var body: some View {
         NavigationStack {
+            Text("WeSplit")
+                .titledFormat()
             Form {
                 Section {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
@@ -70,7 +86,6 @@ struct ContentView: View {
                     Text(totalPerPerson, format:.currency(code: Locale.current.currency?.identifier ?? "USD")) //Locale is for current user data
                 }
             }
-            .navigationTitle("WeSplit")
             .toolbar { //toolbar
                 if amountIsFocused {
                     Button("Done") {
