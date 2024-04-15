@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Custom Modifier to update text
 struct Title: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -18,6 +19,7 @@ struct Title: ViewModifier {
     }
 }
 
+//Modifier with input
 struct WaterMark: ViewModifier {
     var text: String
     
@@ -33,6 +35,7 @@ struct WaterMark: ViewModifier {
     }
 }
 
+//Modifiers have to be added to View extension
 extension View {
     func titleStyle() -> some View {
         modifier(Title())
