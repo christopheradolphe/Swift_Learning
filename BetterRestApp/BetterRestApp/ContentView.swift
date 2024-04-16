@@ -26,11 +26,13 @@ struct ContentView: View {
         NavigationStack {
             Form {
                 VStack(alignment: .leading, spacing: 0){
-                    Text("When do you want to wake up?")
-                        .font(.headline)
-                    
-                    DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
-                        .labelsHidden()
+                    HStack (spacing: 50){
+                        Text("When do you want to wake up?")
+                            .font(.headline)
+                        
+                        DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                    }
                 }
                 
                 VStack (alignment: .leading, spacing: 0) {
