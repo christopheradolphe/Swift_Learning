@@ -40,7 +40,7 @@ struct ContentView: View {
                     Text("Desired amount of sleep")
                         .font(.headline)
                     
-                    Picker("(in Hours)", selection: $sleepAmount) {
+                    Picker("Time (in hours)", selection: $sleepAmount) {
                         ForEach(sleepAmounts, id: \.self) {
                             Text("\($0.formatted()) hours")
                         }
