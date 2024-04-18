@@ -24,47 +24,48 @@ struct ContentView: View {
         return Calendar.current.date(from: components) ?? .now
     }
     var body: some View {
-        NavigationStack {
-            Form {
-                VStack(alignment: .leading, spacing: 0){
-                    HStack (spacing: 50){
-                        Text("When do you want to wake up?")
-                            .font(.headline)
-                        
-                        DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
-                            .labelsHidden()
-                    }
-                }
-                
-                VStack (alignment: .leading, spacing: 0) {
-                    Text("Desired amount of sleep")
-                        .font(.headline)
-                    
-                    Picker("Time (in hours)", selection: $sleepAmount) {
-                        ForEach(sleepAmounts, id: \.self) {
-                            Text("\($0.formatted()) hours")
+            NavigationStack {
+                    Form {
+                        VStack(alignment: .leading, spacing: 0){
+                            HStack (spacing: 50){
+                                Text("When do you want to wake up?")
+                                    .font(.headline)
+                                
+                                DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                                    .labelsHidden()
+                            }
                         }
+                        
+                        VStack (alignment: .leading, spacing: 0) {
+                            Text("Desired amount of sleep")
+                                .font(.headline)
+                            
+                            Picker("Time (in hours)", selection: $sleepAmount) {
+                                ForEach(sleepAmounts, id: \.self) {
+                                    Text("\($0.formatted()) hours")
+                                }
+                            }
+                        }
+                        
+                        VStack (alignment: .leading, spacing: 0) {
+                            Text("Daily coffee intake")
+                                .font(.headline)
+                            
+                            Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in:1...20)
+                        }
+                        
                     }
-                }
+                    .navigationTitle("BetterRest")
+                    .toolbar {
+                        Button("Calculate", action: calculateBedtime)
+                    }
+                    .alert(alertTitle, isPresented: $showingAlert) {
+                        Button("Ok") { }
+                    } message: {
+                        Text(alertMessage)
+                    }
+            }
                 
-                VStack (alignment: .leading, spacing: 0) {
-                    Text("Daily coffee intake")
-                        .font(.headline)
-                    
-                    Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in:1...20)
-                }
-                
-            }
-            .navigationTitle("BetterRest")
-            .toolbar {
-                Button("Calculate", action: calculateBedtime)
-            }
-            .alert(alertTitle, isPresented: $showingAlert) {
-                Button("Ok") { }
-            } message: {
-                Text(alertMessage)
-            }
-        }
     }
     
     func calculateBedtime() {
