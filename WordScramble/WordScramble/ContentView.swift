@@ -42,6 +42,9 @@ struct ContentView: View {
             } message: {
                 Text(errorMessage)
             }
+            .toolbar {
+                Button("New Game", action: startGame)
+            }
         }
     }
     
@@ -81,6 +84,7 @@ struct ContentView: View {
     }
     
     func startGame() {
+        usedWords.removeAll()
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
@@ -121,7 +125,7 @@ struct ContentView: View {
     }
     
     func isTooShort(word: String) -> Bool {
-        return word.count > 3
+        return word.count > 2
     }
     
     func wordError(title: String, message: String) {
