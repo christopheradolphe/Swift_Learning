@@ -49,6 +49,11 @@ struct ContentView: View {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard answer.count > 0 else { return }
         
+        guard isTooShort(word: newWord) else {
+            wordError(title: "Word Too Short", message: "Word must be 3 or more letters")
+            return
+        }
+        
         guard isOriginal(word: newWord) else {
             wordError(title: "Word used already", message: "Be more original!")
             return
@@ -61,6 +66,11 @@ struct ContentView: View {
         
         guard isPossible(word: newWord) else {
             wordError(title: "Word not Possible", message: "You can't spell \(newWord) from \(rootWord)!")
+            return
+        }
+        
+        guard isSameRoot(word: newWord) else {
+            wordError(title: "Word same as Root", message: "You can not choose same word as root word!")
             return
         }
         
@@ -104,6 +114,14 @@ struct ContentView: View {
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isSameRoot(word: String) -> Bool {
+        return word != rootWord
+    }
+    
+    func isTooShort(word: String) -> Bool {
+        return word.count > 3
     }
     
     func wordError(title: String, message: String) {
