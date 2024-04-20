@@ -16,6 +16,18 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var ShowingError = false
     
+    var wordTotal: Int {
+        usedWords.count
+    }
+    
+    var letterCount: Int {
+        var count = 0
+        for word in usedWords {
+            count += word.count
+        }
+        return count
+    }
+    
     var body: some View {
         NavigationStack {
             List {
@@ -23,6 +35,16 @@ struct ContentView: View {
                     TextField("Enter your word", text: $newWord)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
+                }
+                
+                VStack {
+                    Text("Score")
+                        .font(.headline)
+                    HStack {
+                        Text("Words: \(wordTotal)")
+                        Spacer()
+                        Text("Letters: \(letterCount)")
+                    }
                 }
                 
                 Section ("Submitted Words"){
