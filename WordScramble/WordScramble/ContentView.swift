@@ -109,6 +109,7 @@ struct ContentView: View {
     func wordError(title: String, message: String) {
         errorTitle = title
         errorMessage = message
+        newWord = ""
         ShowingError = true
     }
 }
