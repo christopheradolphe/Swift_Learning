@@ -23,6 +23,7 @@ struct ContentView: View {
         //To animate scaleEffect and blur
         //This is implicit animations
         //Animate when value watching changes
+        //Default makes this an implicit animation
         .animation(.default, value: animationAmount)
     }
 }
