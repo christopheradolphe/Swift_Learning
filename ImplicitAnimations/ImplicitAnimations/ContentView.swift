@@ -21,6 +21,8 @@ struct ContentView: View {
         .scaleEffect(animationAmount)
         .blur(radius: (animationAmount - 1) * 3)
         //To animate scaleEffect and blur
+        //This is implicit animations
+        //Animate when value watching changes
         .animation(.default, value: animationAmount)
     }
 }
