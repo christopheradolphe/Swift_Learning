@@ -20,7 +20,7 @@ struct ContentView: View {
         .clipShape(.capsule)
         //Suggest button click
         .overlay(
-            Circle()
+            Capsule()
                 .stroke(.green)
                 .scaleEffect(animationAmount)
                 .opacity(2 - animationAmount)
