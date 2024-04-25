@@ -25,7 +25,7 @@ extension AnyTransition {
 }
 
 struct ContentView: View {
-    @State private var isShowingRed = false
+    @State private var isShowingRed = false //For alert
     
     var body: some View {
         ZStack {
