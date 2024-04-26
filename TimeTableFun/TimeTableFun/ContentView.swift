@@ -11,10 +11,16 @@ struct ContentView: View {
     @State private var maxMultiplier = 2
     @State private var settingsActive = false
     private var questionAmounts = [5, 10, 20]
+    
+    
     @State private var questionNumber = 1
     @State private var totalQuestions = 5
     @State private var multiplicands = [0, 0]
+    @State private var correctAnswers = 0
+    
     @State private var guess = 0
+    @State private var wrongAnswer = false
+    @State private var gameOver = false
     
     var body: some View {
         //Settings page
@@ -29,14 +35,24 @@ struct ContentView: View {
                 Text("\(multiplicands[0]) x \(multiplicands[1]) ?")
                     .font(.largeTitle)
                 
-                Form {
-                    Section("Answer") {
-                        TextField("Answer", value: $guess, format: .number)
-                    }
-                }
+
+                TextField("Answer", value: $guess, format: .number)
+                    .multilineTextAlignment(.center)
+                    .font(.largeTitle)
+                    .padding(10)
+                    .background(.blue)
+                    .foregroundColor(.white)
+
                 
-                Button ("Submit") {
+                Button {
                     checkAnswer()
+                    askQuestion()
+                } label: {
+                    Text("Submit")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(.green)
+                        .clipShape(.capsule)
                 }
             }
             
@@ -71,15 +87,28 @@ struct ContentView: View {
                 }
             }
         }
-
+        .alert("Wrong Answer", isPresented: $wrongAnswer) {
+            //Do nothing
+        } message: {
+            Text("\(multiplicands[0])x\(multiplicands[1])=\(multiplicands[0] * multiplicands[1])")
+        }
         
     }
     func askQuestion() {
-        
+        questionNumber += 1
+        if questionNumber > totalQuestions {
+            gameOver = true
+        }
+        multiplicands[0] = Int.random(in: 2...maxMultiplier)
+        multiplicands[1] = Int.random(in: 2...maxMultiplier)
     }
     
-    func checkAnswer() -> Bool {
-        return true
+    func checkAnswer() {
+        if guess == multiplicands[0] * multiplicands[1] {
+            correctAnswers += 1
+        } else {
+            wrongAnswer = true
+        }
     }
     
 }
