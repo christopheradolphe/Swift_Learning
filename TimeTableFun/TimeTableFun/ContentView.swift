@@ -43,6 +43,7 @@ struct ContentView: View {
                         .padding(10)
                         .background(.blue)
                         .foregroundColor(.white)
+                        .keyboardType(.decimalPad)
                     
                     
                     Button {
@@ -105,8 +106,11 @@ struct ContentView: View {
         
         .alert("Game Over", isPresented: $gameOver) {
             Button("Restart Game", action: newGame)
+            Button("Change Settings") {
+                settingsActive = true
+            }
         } message: {
-            Text("Game over! \nOverall Score: \(correctAnswers)/\(totalQuestions)")
+            Text("Overall Score: \(correctAnswers)/\(totalQuestions)")
         }
         
     }
