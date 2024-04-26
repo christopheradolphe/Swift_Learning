@@ -29,6 +29,7 @@ struct ContentView: View {
     @State private var endOfGame = false
     
     @State private var flagRotations = [0.0, 0.0, 0.0]
+    @State private var flagGuess = 3
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -52,12 +53,15 @@ struct ContentView: View {
                     ForEach(0..<3) { number in
                         Button {
                             flagRotations[number] += 360
+                            flagGuess = number
                             flagTapped(number)
                         } label: {
                             FlagImage(name: countries[number])
                                 .rotation3DEffect(.degrees(flagRotations[number]),
                                                   axis: (x: 0.0, y: 1.0, z: 0.0)
                                 )
+                                .opacity(flagGuess == 3 ? 1 : flagGuess == number ? 1 : 0.25)
+                                .animation(.linear, value: flagGuess)
                                 .animation(.bouncy, value: flagRotations)
                         }
                     }
@@ -110,6 +114,7 @@ struct ContentView: View {
         }
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        flagGuess = 3
     }
     
     func restartGame() {
