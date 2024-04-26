@@ -93,6 +93,12 @@ struct ContentView: View {
             Text("\(multiplicands[0])x\(multiplicands[1])=\(multiplicands[0] * multiplicands[1])")
         }
         
+        .alert("Game Over", isPresented: $gameOver) {
+            Button("Restart Game", action: newGame)
+        } message: {
+            Text("Game over! \nOverall Score: \(correctAnswers)/\(totalQuestions)")
+        }
+        
     }
     func askQuestion() {
         questionNumber += 1
@@ -109,6 +115,12 @@ struct ContentView: View {
         } else {
             wrongAnswer = true
         }
+    }
+    
+    func newGame() {
+        questionNumber = 0
+        correctAnswers = 0
+        askQuestion()
     }
     
 }
