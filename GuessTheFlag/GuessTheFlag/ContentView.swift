@@ -61,6 +61,7 @@ struct ContentView: View {
                                                   axis: (x: 0.0, y: 1.0, z: 0.0)
                                 )
                                 .opacity(flagGuess == 3 ? 1 : flagGuess == number ? 1 : 0.25)
+                                .scaleEffect(flagGuess == 3 ? 1 : flagGuess == number ? 1 : 0.25)
                                 .animation(.linear, value: flagGuess)
                                 .animation(.bouncy, value: flagRotations)
                         }
