@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var maxMultiplier = 2
-    @State private var settingsActive = false
+    @State private var settingsActive = true
     private var questionAmounts = [5, 10, 20]
     
     
@@ -28,31 +28,33 @@ struct ContentView: View {
             LinearGradient(colors: [.blue, .green], startPoint: .leading, endPoint: .trailing)
                 .ignoresSafeArea()
             
-            VStack (alignment: .center, spacing: 50) {
-                Text("Question \(questionNumber)")
-                    .font(.largeTitle)
-                
-                Text("\(multiplicands[0]) x \(multiplicands[1]) ?")
-                    .font(.largeTitle)
-                
-
-                TextField("Answer", value: $guess, format: .number)
-                    .multilineTextAlignment(.center)
-                    .font(.largeTitle)
-                    .padding(10)
-                    .background(.blue)
-                    .foregroundColor(.white)
-
-                
-                Button {
-                    checkAnswer()
-                    askQuestion()
-                } label: {
-                    Text("Submit")
-                        .padding()
+            if !settingsActive {
+                VStack (alignment: .center, spacing: 50) {
+                    Text("Question \(questionNumber)")
+                        .font(.largeTitle)
+                    
+                    Text("\(multiplicands[0]) x \(multiplicands[1]) ?")
+                        .font(.largeTitle)
+                    
+                    
+                    TextField("Answer", value: $guess, format: .number)
+                        .multilineTextAlignment(.center)
+                        .font(.largeTitle)
+                        .padding(10)
+                        .background(.blue)
                         .foregroundColor(.white)
-                        .background(.green)
-                        .clipShape(.capsule)
+                    
+                    
+                    Button {
+                        checkAnswer()
+                        askQuestion()
+                    } label: {
+                        Text("Submit")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(.green)
+                            .clipShape(.capsule)
+                    }
                 }
             }
             
@@ -64,19 +66,25 @@ struct ContentView: View {
                         }
                         
                         Section ("Number of questions") {
-                            Picker("Number of questions", selection: $questionNumber) {
+                            Picker("Number of questions", selection: $totalQuestions) {
                                 ForEach(questionAmounts, id: \.self) {
                                     Text($0, format: .number)
                                 }
                             }
                             .pickerStyle(.segmented)
                         }
-                        
-                        Button("Start Game") {
-                            settingsActive = false
-                            
-                        }
                     }
+                    Button {
+                        newGame()
+                        settingsActive = false
+                    } label: {
+                        Text("Start Game")
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(.gray)
+                            .clipShape(.capsule)
+                    }
+                    
                     .toolbar {
                         if !settingsActive {
                             Button("Settings") {
@@ -84,9 +92,11 @@ struct ContentView: View {
                             }
                         }
                     }
+                    .navigationTitle("Game Settings")
                 }
             }
         }
+        
         .alert("Wrong Answer", isPresented: $wrongAnswer) {
             //Do nothing
         } message: {
@@ -100,6 +110,7 @@ struct ContentView: View {
         }
         
     }
+    
     func askQuestion() {
         questionNumber += 1
         if questionNumber > totalQuestions {
@@ -107,6 +118,7 @@ struct ContentView: View {
         }
         multiplicands[0] = Int.random(in: 2...maxMultiplier)
         multiplicands[1] = Int.random(in: 2...maxMultiplier)
+        guess = 0
     }
     
     func checkAnswer() {
