@@ -27,6 +27,8 @@ struct ContentView: View {
     @State private var scoreValue = 0
     @State private var questionNumber = 0
     @State private var endOfGame = false
+    
+    @State private var flagTapped = 4
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -52,6 +54,7 @@ struct ContentView: View {
                             flagTapped(number)
                         } label: {
                             FlagImage(name: countries[number])
+                                .scaleEffect(1.5)
                         }
                     }
                 }
