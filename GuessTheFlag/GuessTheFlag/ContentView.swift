@@ -28,7 +28,7 @@ struct ContentView: View {
     @State private var questionNumber = 0
     @State private var endOfGame = false
     
-    @State private var flagTapped = 4
+    @State private var flagRotations = [0.0, 0.0, 0.0]
     var body: some View {
         ZStack {
             RadialGradient(stops: [
@@ -51,10 +51,14 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button {
+                            flagRotations[number] += 360
                             flagTapped(number)
                         } label: {
                             FlagImage(name: countries[number])
-                                .scaleEffect(1.5)
+                                .rotation3DEffect(.degrees(flagRotations[number]),
+                                                  axis: (x: 0.0, y: 1.0, z: 0.0)
+                                )
+                                .animation(.bouncy, value: flagRotations)
                         }
                     }
                 }
