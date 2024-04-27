@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct User {
+@Observable //Need this to change view when class changes
+class User {
     var firstName = "Bilbo"
     var lastName = "Baggins"
 }
