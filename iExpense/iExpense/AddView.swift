@@ -31,7 +31,7 @@ struct AddView: View {
             }
             .navigationTitle("Add new expense")
             .onSubmit {
-                expenses.append(ExpenseItem(name: name, type: type, amount: amount))
+                expenses.items.append(ExpenseItem(name: name, type: type, amount: amount))
             }
         }
     }
