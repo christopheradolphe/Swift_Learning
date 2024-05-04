@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+//Second view stored in another file
+//File->New->File and choose view
+
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
     
