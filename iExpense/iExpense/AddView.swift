@@ -46,5 +46,5 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddView(expenses: Expenses()) //Previewing this page with no input expenses
 }
