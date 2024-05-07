@@ -10,7 +10,7 @@ import SwiftUI
 //Second view stored in another file
 //File->New->File and choose view
 
-struct AddView: View {
+struct AddView: View { // First view
     @Environment(\.dismiss) var dismiss
     
     @State private var name = ""
