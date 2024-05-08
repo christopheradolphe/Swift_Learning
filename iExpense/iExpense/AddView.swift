@@ -31,7 +31,7 @@ struct AddView: View { // First view
                         Text($0)
                     }
                 }
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
+                TextField("Amount", value: $amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
@@ -46,5 +46,5 @@ struct AddView: View { // First view
 }
 
 #Preview {
-    AddView(expenses: Expenses()) //Previewing this page with no input expenses
+    AddView(expenses: Expenses())
 }
