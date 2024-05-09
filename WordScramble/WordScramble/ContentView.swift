@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var ShowingError = false
     
-    var wordTotal: Int {
+    var wordTotal: Int { //Computed Property
         usedWords.count
     }
     
