@@ -20,7 +20,7 @@ struct ContentView: View {
         usedWords.count
     }
     
-    var letterCount: Int {
+    var letterCount: Int { //Computed property to track total number of letters in words used
         var count = 0
         for word in usedWords {
             count += word.count
