@@ -57,8 +57,8 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
-            .onSubmit(addNewWord)
-            .onAppear(perform: startGame)
+            .onSubmit(addNewWord) //When enter button is pressed
+            .onAppear(perform: startGame) //When content view is opened
             .alert(errorTitle, isPresented: $ShowingError) {
                 //Default Ok message provided
             } message: {
