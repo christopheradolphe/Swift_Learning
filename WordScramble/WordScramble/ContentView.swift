@@ -65,7 +65,7 @@ struct ContentView: View {
                 Text(errorMessage)
             }
             .toolbar {
-                Button("New Game", action: startGame)
+                Button("New Game", action: startGame) //Toolbar button has default location top right
             }
         }
     }
