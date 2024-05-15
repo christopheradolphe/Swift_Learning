@@ -25,6 +25,13 @@ struct ContentView: View {
 //                }
 //                
 //            }
+            //3. NavigationLink using lists
+            List(0..<100) { row in
+                NavigationLink("Row \(row)") {
+                    Text("Detail \(row)")
+                }
+                
+            }
             .navigationTitle("SwiftUI")
         }
     }
