@@ -13,6 +13,7 @@
 		8CA67AAE2BF467E800EF87DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA67AAD2BF467E800EF87DF /* Preview Assets.xcassets */; };
 		8CA67AB52BF4684B00EF87DF /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CA67AB42BF4684B00EF87DF /* astronauts.json */; };
 		8CA67AB72BF4685600EF87DF /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CA67AB62BF4685600EF87DF /* missions.json */; };
+		8CA67AB92BF468CF00EF87DF /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA67AB82BF468CF00EF87DF /* Astronaut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8CA67AAD2BF467E800EF87DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8CA67AB42BF4684B00EF87DF /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		8CA67AB62BF4685600EF87DF /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
+		8CA67AB82BF468CF00EF87DF /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				8CA67AA62BF467E200EF87DF /* MoonshotApp.swift */,
 				8CA67AA82BF467E200EF87DF /* ContentView.swift */,
 				8CA67AAA2BF467E800EF87DF /* Assets.xcassets */,
+				8CA67AB82BF468CF00EF87DF /* Astronaut.swift */,
 				8CA67AB42BF4684B00EF87DF /* astronauts.json */,
 				8CA67AB62BF4685600EF87DF /* missions.json */,
 				8CA67AAC2BF467E800EF87DF /* Preview Content */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA67AB92BF468CF00EF87DF /* Astronaut.swift in Sources */,
 				8CA67AA92BF467E200EF87DF /* ContentView.swift in Sources */,
 				8CA67AA72BF467E200EF87DF /* MoonshotApp.swift in Sources */,
 			);
