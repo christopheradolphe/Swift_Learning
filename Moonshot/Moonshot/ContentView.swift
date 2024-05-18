@@ -27,19 +27,34 @@ struct ContentView: View {
                                 Image(mission.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 300, height: 100)
+                                    .frame(width: 100, height: 100)
+                                    .padding()
                                 VStack {
                                     Text(mission.displayName)
                                         .font(.headline)
+                                        .foregroundStyle(.white)
                                     
-                                    Text(mission.launchDate ?? "N/A")
+                                    Text(mission.formattedLaunchDate)
                                         .font(.headline)
+                                        .foregroundStyle(.gray)
                                 }
+                                .padding(.vertical)
+                                .frame(maxWidth: .infinity)
+                                .background(.lightBackground)
                             }
+                            .clipShape(.rect(cornerRadius: 10))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.lightBackground)
+                            )
                         }
                     }
                 }
+                .padding([.horizontal, .bottom])
             }
+            .navigationTitle("Moonshot")
+            .background(.darkBackground)
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         }
     }
 }
