@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-    let missions: [Mission] = Bundle.main.decode("missions.json")
+    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json") //Dictionary of string to Astronaut class
+    let missions: [Mission] = Bundle.main.decode("missions.json") //Array of classes
     
     let columns = [
         GridItem(.adaptive(minimum: 150))
