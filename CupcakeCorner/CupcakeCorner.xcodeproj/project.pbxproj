@@ -12,6 +12,7 @@
 		8C1DAA5D2C169E6600B308BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1DAA5C2C169E6600B308BE /* Assets.xcassets */; };
 		8C1DAA602C169E6600B308BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1DAA5F2C169E6600B308BE /* Preview Assets.xcassets */; };
 		8C1DAA672C169E8B00B308BE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DAA662C169E8B00B308BE /* Order.swift */; };
+		8C1DAA692C16A1C700B308BE /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DAA682C16A1C700B308BE /* AddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		8C1DAA5C2C169E6600B308BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C1DAA5F2C169E6600B308BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C1DAA662C169E8B00B308BE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		8C1DAA682C16A1C700B308BE /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				8C1DAA582C169E6000B308BE /* CupcakeCornerApp.swift */,
 				8C1DAA5A2C169E6000B308BE /* ContentView.swift */,
 				8C1DAA662C169E8B00B308BE /* Order.swift */,
+				8C1DAA682C16A1C700B308BE /* AddressView.swift */,
 				8C1DAA5C2C169E6600B308BE /* Assets.xcassets */,
 				8C1DAA5E2C169E6600B308BE /* Preview Content */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C1DAA672C169E8B00B308BE /* Order.swift in Sources */,
+				8C1DAA692C16A1C700B308BE /* AddressView.swift in Sources */,
 				8C1DAA5B2C169E6000B308BE /* ContentView.swift in Sources */,
 				8C1DAA592C169E6000B308BE /* CupcakeCornerApp.swift in Sources */,
 			);
